@@ -1,18 +1,22 @@
 package com.abhishek.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.AbstractController;
 
-@Controller
-public class HelloController {
- 
-	@RequestMapping("/welcome")
-	public ModelAndView helloWorld() {
-		ModelAndView mvc = new ModelAndView("welcome");
-		String message = "<br><div style='text-align:center;'>"
-				+ "<h3>********** Hello World, Spring MVC Tutorial</h3>This message is coming from CrunchifyHelloWorld.java **********</div><br><br>";
-		mvc.addObject("message", message);
-		return mvc;
+
+public class HelloController extends AbstractController{
+
+	@Override
+	protected ModelAndView handleRequestInternal(HttpServletRequest request,
+		HttpServletResponse response) throws Exception {
+
+		ModelAndView model = new ModelAndView("welcome");
+		model.addObject("message","Raut App");
+		return model;
 	}
 }
