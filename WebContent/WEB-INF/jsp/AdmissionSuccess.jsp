@@ -9,6 +9,9 @@
 <body>
 	<h1>${headerMessage} </h1>
 	<h3>Congratulations, your application is processed as below: </h3>
-	<p> ${messageText} </p>
+	<div>
+		<p>Student name: ${student1.studentName} </p>
+		<p>Student hobby: ${student1.studentHobby} </p>
+	</div>
 </body>
 </html>
