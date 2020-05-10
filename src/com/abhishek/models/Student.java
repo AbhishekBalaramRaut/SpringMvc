@@ -9,12 +9,14 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.abhishek.support.IsValidHobby;
+
 public class Student {
 
 		@Pattern(regexp="[^0-9]*")
 		private String studentName;
 		
-		@Size(min=4,max=15)
+		@Size(min=4,max=15) @IsValidHobby
 		private String studentHobby;
 		
 		@Min(2222)
