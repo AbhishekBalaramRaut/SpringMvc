@@ -5,6 +5,8 @@ import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,10 @@ import com.abhishek.models.Student;
 @Controller
 public class AdmissionForm {
 	
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		binder.setDisallowedFields(new String[] {"studentMobile"});
+	}
 	
 	@RequestMapping(value="/admission.html", method=RequestMethod.GET)
 	public ModelAndView getAdmissionForm() {
