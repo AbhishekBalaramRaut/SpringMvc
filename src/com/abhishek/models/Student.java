@@ -11,6 +11,15 @@ public class Student {
 		private Date studentDOB;
 		private ArrayList<String> studentSkills;
 		
+		private Address studentAddress;
+		
+		
+		public Address getStudentAddress() {
+			return studentAddress;
+		}
+		public void setStudentAddress(Address studentAddress) {
+			this.studentAddress = studentAddress;
+		}
 		public String getStudentName() {
 			return studentName;
 		}

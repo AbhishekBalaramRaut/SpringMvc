@@ -15,6 +15,12 @@
 		<p>Student Mobile: ${student1.studentMobile} </p>
 		<p>Student DOB : ${student1.studentDOB} </p>
 		<p>Student Skills: ${student1.studentSkills} </p>
+		<br>
+		<p>Student Address details:  </p>
+		<p>Country: ${student1.studentAddress.country} </p>
+		<p>Street: ${student1.studentAddress.street} </p>
+		<p>City: ${student1.studentAddress.city} </p>
+		<p>Pin Code: ${student1.studentAddress.pincode} </p>
 	</div>
 </body>
 </html>

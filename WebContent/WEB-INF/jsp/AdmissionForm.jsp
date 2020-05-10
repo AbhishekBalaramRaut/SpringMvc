@@ -30,6 +30,13 @@
 							
 							</select>
 	</p>
+	
+		<p>Country:<input type="text" name="studentAddress.country" /></p>
+		<p>Street: <input type="text" name="studentAddress.street" /> </p>
+		<p>City: <input type="text" name="studentAddress.city" /> </p>
+		<p>Pin Code: <input type="text" name="studentAddress.pincode" /> </p>
+		
+		
 	<input type="submit" value="Submit form" />
 </form>
 </body>
