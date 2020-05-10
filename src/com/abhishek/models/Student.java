@@ -3,9 +3,13 @@ package com.abhishek.models;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.validation.constraints.Size;
+
 public class Student {
 
 		private String studentName;
+		
+		@Size(min=4,max=15, message="Please enter hobby of {min} to {max} characters")
 		private String studentHobby;
 		private Long studentMobile;
 		private Date studentDOB;

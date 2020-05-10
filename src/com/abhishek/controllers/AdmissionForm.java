@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.abhishek.models.Student;
+import com.abhishek.support.StudentNameEditor;
 
 
 @Controller
@@ -28,6 +31,8 @@ public class AdmissionForm {
 		binder.setDisallowedFields(new String[] {"studentMobile"});
 		SimpleDateFormat format = new SimpleDateFormat("yyyy**MM***dd");
 		binder.registerCustomEditor(Date.class,"studentDOB", new CustomDateEditor(format,false));
+
+		binder.registerCustomEditor(String.class,"studentName", new StudentNameEditor());
 	}
 	
 	@RequestMapping(value="/admission.html", method=RequestMethod.GET)
@@ -42,8 +47,9 @@ public class AdmissionForm {
 		model.addAttribute("headerMessage", "Welcome  to Raut college of engineering");
 	}
 	
+	
 	@RequestMapping(value="/submitForm.html",method = RequestMethod.POST)
-	public ModelAndView submitForm(@ModelAttribute("student1") Student student2, BindingResult result) {
+	public ModelAndView submitForm(@Valid @ModelAttribute("student1") Student student2, BindingResult result) {
 		
 		if(result.hasErrors()) {
 			ModelAndView mvc = new ModelAndView("AdmissionForm");
