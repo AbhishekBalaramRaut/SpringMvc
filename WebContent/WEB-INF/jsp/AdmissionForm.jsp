@@ -15,6 +15,21 @@
 	<p>
 		Student's hobby: <input type="text" name="studentHobby" />
 	</p>
+	<p>
+		Student's Mobile: <input type="text" name="studentMobile" />
+	</p>
+	<p>
+		Student's DOB: <input type="text" name="studentDOB" />
+	</p>
+	<p>
+		Student's skills: <select name="studentSkills" multiple>
+							<option value="Java core">Java Core </option>
+							<option value="Spring core">Spring Core </option>
+							<option value="Spring mvc">Spring mvc </option>
+							<option value="Hibernate">Hibernate</option>
+							
+							</select>
+	</p>
 	<input type="submit" value="Submit form" />
 </form>
 </body>

@@ -12,6 +12,9 @@
 	<div>
 		<p>Student name: ${student1.studentName} </p>
 		<p>Student hobby: ${student1.studentHobby} </p>
+		<p>Student Mobile: ${student1.studentMobile} </p>
+		<p>Student DOB : ${student1.studentDOB} </p>
+		<p>Student Skills: ${student1.studentSkills} </p>
 	</div>
 </body>
 </html>
