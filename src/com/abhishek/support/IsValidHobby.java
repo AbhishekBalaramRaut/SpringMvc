@@ -14,7 +14,7 @@ import javax.validation.Payload;
 @Target( {ElementType.FIELD})
 @Retention( RetentionPolicy.RUNTIME)
 public @interface IsValidHobby {
-	
+	String valOptions() default "Music|Football|Cricket|Hockey|Singing";
 	String message() default "Please provide a valid hobby like Football";
 	
 	Class<?>[] groups() default {};

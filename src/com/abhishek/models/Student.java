@@ -16,7 +16,7 @@ public class Student {
 		@Pattern(regexp="[^0-9]*")
 		private String studentName;
 		
-		@Size(min=4,max=15) @IsValidHobby
+		@Size(min=4,max=15) @IsValidHobby(valOptions ="Music|Football|Cricket|Hockey")
 		private String studentHobby;
 		
 		@Min(2222)
