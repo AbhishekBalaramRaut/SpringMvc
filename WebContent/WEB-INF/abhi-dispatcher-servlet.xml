@@ -17,6 +17,11 @@
 		<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
 	<!-- <mvc:default-servlet-handler /> -->
 	
+	<mvc:interceptors>
+	  <bean class="com.abhishek.support.DayOfWeekAccessInterceptor" />
+	</mvc:interceptors>
+	
+	
  	<bean id="myBeansValidator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
  	<mvc:annotation-driven validator="myBeansValidator" />
  	
