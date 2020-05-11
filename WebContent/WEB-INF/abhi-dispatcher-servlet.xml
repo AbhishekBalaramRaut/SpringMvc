@@ -18,7 +18,10 @@
 	<!-- <mvc:default-servlet-handler /> -->
 	
 	<mvc:interceptors>
-	  <bean class="com.abhishek.support.DayOfWeekAccessInterceptor" />
+		<mvc:interceptor>
+			<mvc:mapping path="/admission.html" />
+	  		<bean class="com.abhishek.support.DayOfWeekAccessInterceptor" />
+	  	</mvc:interceptor>	
 	</mvc:interceptors>
 	
 	
