@@ -1,0 +1,17 @@
+.main-section {
+    width: 70%;
+    margin-top: 20px;
+    padding: 40px;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    box-shadow: 2px 2px gainsboro;
+    background-color: #FFF;
+}
+
+body {
+    background-color: #F0F0F0 !important;
+}
+
+span[id*="errors"] {
+	color:red;
+}

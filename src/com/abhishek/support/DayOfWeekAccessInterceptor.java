@@ -16,8 +16,8 @@ public class DayOfWeekAccessInterceptor extends HandlerInterceptorAdapter {
 		Calendar cal = Calendar.getInstance();
 		int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
 		
-		if(dayOfWeek == 3) {
-			res.getWriter().write("The website is closed on Wednesday. Try accessing later");
+		if(dayOfWeek == 1) {
+			res.getWriter().write("The website is closed on Sunday. Try accessing later");
 			return false;
 		}
 		return true;
