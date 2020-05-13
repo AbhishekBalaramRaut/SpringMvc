@@ -1,10 +1,23 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
+<spring:url value="/resources/css/global.css" var="globalCSS" />
+<spring:url value="/resources/js/jquery.min.js" var="jqueryJs" />
+<spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
+<spring:url value="/resources/js/bootstrap.bundle.min.js"
+	var="bootstrapBundleJs" />
+<link href="${bootstrapCSS}" rel="stylesheet" />
+<link href="${globalCSS}" rel="stylesheet" />
+<title>Welcome Page</title>
 </head>
 <body>${message}
 <p>Welcome file </p>

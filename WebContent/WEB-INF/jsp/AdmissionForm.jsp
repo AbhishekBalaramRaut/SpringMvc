@@ -17,6 +17,7 @@
 	var="bootstrapBundleJs" />
 <link href="${bootstrapCSS}" rel="stylesheet" />
 <link href="${globalCSS}" rel="stylesheet" />
+<link rel="stylesheet" href="<spring:theme code='styleSheet' />" type="text/css" />
 <title><spring:message code="label.admissionForm" /></title>
 
 </head>
@@ -37,6 +38,15 @@
 			<li class="nav-item"><a class="nav-link" href="#"><spring:message code="label.welcome" /></a></li>
 			<li class="nav-item"><a class="nav-link" href="${contextPath}/admission.html?siteLanguage=en"><spring:message code="label.english" /></a></li>
 			<li class="nav-item"><a class="nav-link" href="${contextPath}/admission.html?siteLanguage=fr"><spring:message code="label.french" /></a></li>
+			<li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Theme
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="${contextPath}/admission.html?siteTheme=dark">Dark</a>
+		          <a class="dropdown-item" href="${contextPath}/admission.html?siteTheme=light">Light</a>
+		        </div>
+		     </li>
 		</ul>
 	</div>
 	</nav>
