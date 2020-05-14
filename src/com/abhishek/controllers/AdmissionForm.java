@@ -59,24 +59,6 @@ public class AdmissionForm {
 		return mvc;
 	}
 	
-	@ExceptionHandler(value=IOException.class)
-	public String handleIOExeption(Exception ex) {
-		System.out.println(ex.toString());
-		return "IOExceptionFile";
-	}
-	
-	@ExceptionHandler(value=ArithmeticException.class)
-	public String handleArithExeption(Exception ex) {
-		System.out.println(ex.toString());
-		return "ArithExceptionFile";
-	}
-	
-	@ExceptionHandler(value=Exception.class)
-	public String handleExeption(Exception ex) {
-		System.out.println(ex.toString());
-		return "Exception";
-	}
-	
 	@ModelAttribute
 	public void commonHeaders(Model model) {
 		model.addAttribute("headerMessage", "Welcome  to Raut college of engineering");
