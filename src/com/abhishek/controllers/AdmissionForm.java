@@ -1,5 +1,7 @@
 package com.abhishek.controllers;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,10 +39,42 @@ public class AdmissionForm {
 	}
 	
 	@RequestMapping(value="/admission.html", method=RequestMethod.GET)
-	public ModelAndView getAdmissionForm() {
+	public ModelAndView getAdmissionForm() throws Exception {
+		String exception = "SQLException";
+		
+		if(exception.equalsIgnoreCase("IOException")) {
+			throw new IOException();
+		}
+		else if(exception.equalsIgnoreCase("ArithmeticException")) {
+			throw new ArithmeticException();
+		}
+		else if(exception.equalsIgnoreCase("SQLException")) {
+			throw new SQLException();
+		}
+		else if(exception != "") {
+			throw new Exception();
+		}
 		ModelAndView mvc = new ModelAndView("AdmissionForm");
 		
 		return mvc;
+	}
+	
+	@ExceptionHandler(value=IOException.class)
+	public String handleIOExeption(Exception ex) {
+		System.out.println(ex.toString());
+		return "IOExceptionFile";
+	}
+	
+	@ExceptionHandler(value=ArithmeticException.class)
+	public String handleArithExeption(Exception ex) {
+		System.out.println(ex.toString());
+		return "ArithExceptionFile";
+	}
+	
+	@ExceptionHandler(value=Exception.class)
+	public String handleExeption(Exception ex) {
+		System.out.println(ex.toString());
+		return "Exception";
 	}
 	
 	@ModelAttribute

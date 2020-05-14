@@ -15,3 +15,8 @@ body {
 span[id*="errors"] {
 	color:red;
 }
+
+.student-details {
+	width:70%;
+	margin: 20px auto;
+}

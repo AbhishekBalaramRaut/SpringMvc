@@ -9,8 +9,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-<spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS" />
-<spring:url value="/resources/css/global.css" var="globalCSS" />
+<spring:url value="/resources/css/plugin/bootstrap.min.css" var="bootstrapCSS" />
+<spring:url value="/resources/css/common/global.css" var="globalCSS" />
 <spring:url value="/resources/js/jquery.min.js" var="jqueryJs" />
 <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
 <spring:url value="/resources/js/bootstrap.bundle.min.js"

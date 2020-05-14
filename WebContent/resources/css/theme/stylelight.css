@@ -1,0 +1,15 @@
+h1 {
+	color:blue;
+}
+
+.bg-dark {
+    background-color: lightgray !important;
+}
+
+a.navbar-brand {
+    color: black !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: black;
+}
