@@ -10,9 +10,16 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import com.abhishek.support.IsValidHobby;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties({"studentMobile"})
+@JsonPropertyOrder({"studentHobby","Student_name", "studentDOB", "studentMobile"})
 public class Student {
-
+		@JsonProperty("Student_name")
 		@Pattern(regexp="[^0-9]*")
 		private String studentName;
 		

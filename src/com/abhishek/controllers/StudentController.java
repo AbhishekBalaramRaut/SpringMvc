@@ -2,7 +2,9 @@ package com.abhishek.controllers;
 
 import java.util.ArrayList;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,7 +15,7 @@ import com.abhishek.models.Student;
 @RestController
 public class StudentController {
 	
-	@RequestMapping(value="/students",method = RequestMethod.GET)
+	@RequestMapping(value="/students",method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	public ArrayList<Student> getAllStudents() {
 		
 		ArrayList<Student> students = new ArrayList<>();
@@ -40,6 +42,17 @@ public class StudentController {
 		s1.setStudentName(name1);
 		
 		return s1;
+		
+	}
+	
+	@RequestMapping(value="/students/{name}",method = RequestMethod.PUT)
+	public Student updateStudent(@PathVariable String name, @RequestBody Student student) {
+		
+		
+		
+		student.setStudentName(name + "Abhi");
+		
+		return student;
 		
 	}
 
