@@ -82,35 +82,5 @@ public class AdmissionForm {
 	}
 	
 	
-	@ResponseBody
-	@RequestMapping(value="/students",method = RequestMethod.GET)
-	public ArrayList<Student> getAllStudents() {
 		
-		ArrayList<Student> students = new ArrayList<>();
-		Student s1 = new Student();
-		s1.setStudentName("Abhishek");
-		
-		Student s2 = new Student();
-		s2.setStudentName("Abhishek");
-		
-		students.add(s1);
-		students.add(s2);
-		
-		
-		return students;
-		
-	}
-	
-	@ResponseBody
-	@RequestMapping(value="/students/{name}",method = RequestMethod.GET)
-	public Student getAllStudent(@PathVariable("name") String name1) {
-		
-		
-		Student s1 = new Student();
-		s1.setStudentName(name1);
-		
-		return s1;
-		
-	}
-	
 }
