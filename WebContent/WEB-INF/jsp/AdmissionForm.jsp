@@ -15,8 +15,11 @@
 <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
 <spring:url value="/resources/js/bootstrap.bundle.min.js"
 	var="bootstrapBundleJs" />
+<spring:url value="/resources/favicon.ico"
+	var="favicon" />
 <link href="${bootstrapCSS}" rel="stylesheet" />
 <link href="${globalCSS}" rel="stylesheet" />
+<link rel="shortcut icon" href="${favicon}" />
 <link rel="stylesheet" href="<spring:theme code='styleSheet' />" type="text/css" />
 <title><spring:message code="label.admissionForm" /></title>
 
