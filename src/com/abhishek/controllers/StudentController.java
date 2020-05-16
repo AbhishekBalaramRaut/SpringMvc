@@ -2,7 +2,10 @@ package com.abhishek.controllers;
 
 import java.util.ArrayList;
 
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,14 +48,19 @@ public class StudentController {
 		
 	}
 	
-	@RequestMapping(value="/students/{name}",method = RequestMethod.PUT)
-	public Student updateStudent(@PathVariable String name, @RequestBody Student student) {
+	@RequestMapping(value="/students/{name}",method = RequestMethod.PUT,consumes=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Student> updateStudent(@PathVariable String name, @RequestBody Student student) {
 		
 		
 		
 		student.setStudentName(name + "Abhi");
-		
-		return student;
+		if(name.equalsIgnoreCase("Abhi")) {
+			return new ResponseEntity<Student>(new Student(),HttpStatus.NOT_FOUND);
+		}
+		HttpHeaders httpHeaders = new HttpHeaders();
+		httpHeaders.add("key1", "Hello");
+		httpHeaders.add("key2", "unlucky");
+		return  new ResponseEntity<Student>(student, httpHeaders, HttpStatus.OK);
 		
 	}
 
