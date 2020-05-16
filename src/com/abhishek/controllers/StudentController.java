@@ -60,7 +60,7 @@ public class StudentController {
 		}
 		HttpHeaders httpHeaders = new HttpHeaders();
 		httpHeaders.add("key1", "Hello");
-		httpHeaders.add("key2", "unlucky");
+		
 		return  new ResponseEntity<Student>(student, httpHeaders, HttpStatus.OK);
 		
 	}
