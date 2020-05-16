@@ -1,5 +1,6 @@
 package com.abhishek.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -8,6 +9,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import org.springframework.stereotype.Component;
 
 import com.abhishek.support.IsValidHobby;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -18,7 +21,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties({"studentMobile"})
 @JsonPropertyOrder({"studentHobby","Student_name", "studentDOB", "studentMobile"})
-public class Student {
+@Component
+public class Student implements Serializable{
 		@JsonProperty("Student_name")
 		@Pattern(regexp="[^0-9]*")
 		private String studentName;
