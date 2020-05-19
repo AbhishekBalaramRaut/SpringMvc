@@ -43,7 +43,7 @@ public class AdmissionForm {
 	
 	@RequestMapping(value="/admission.html", method=RequestMethod.GET)
 	public ModelAndView getAdmissionForm() throws Exception {
-		String exception = "SQLException";
+		String exception = "";
 		
 		if(exception.equalsIgnoreCase("IOException")) {
 			throw new IOException();
